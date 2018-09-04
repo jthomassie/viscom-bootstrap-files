@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Basic layout options</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+	
+	<!-- CSS for this example-->
+	<style>
+	.demo-col {
+		background-color: #ffd65a;
+		padding-top: .75rem;
+		padding-bottom: .75rem;
+		border: 1px solid #bf9518;
+		margin-bottom: 0.5rem;
+	}
+	.demo-row {
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+	</style>
+	
+</head>
+
+<body>
+
+
+	<!-- layout with .container class - resizes to media query breakpoints -->
+	<div class="container">
+
+		<div class="row demo-row">
+			<div class="col">
+				<h2>Container</h2>
+				<p>Responsive, resizes to media query breakpoints</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col demo-col">
+				1 of 2
+			</div>
+			<div class="col demo-col">
+				2 of 2
+			</div>
+			<div class="col demo-col">
+				3 of 3
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-2 demo-col">
+				2 of 12
+			</div>
+			<div class="col-4 demo-col">
+				4 of 12
+			</div>
+			<div class="col-6 demo-col">
+				6 of 12
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- layout with .no-gutter class on rows -->
+	<div class="container">
+
+		<div class="row no-gutters demo-row">
+			<div class="col">
+				<h2>Container</h2>
+				<p>Add .no-gutter class to rows to remove padding from columns and margin from the row.</p>
+			</div>
+		</div>
+
+		<div class="row no-gutters">
+			<div class="col demo-col">
+				1 of 2
+			</div>
+			<div class="col demo-col">
+				2 of 2
+			</div><div class="col demo-col">
+				3 of 3
+			</div>
+		</div>
+
+		<div class="row no-gutters">
+			<div class="col-2 demo-col">
+				2 of 12
+			</div>
+			<div class="col-4 demo-col">
+				4 of 12
+			</div>
+			<div class="col-6 demo-col">
+				6 of 12
+			</div>
+		</div>
+	</div>
+
+
+	<!-- layout with .container-fluid class - always maintains full-width-->
+	<div class="container-fluid">
+
+		<div class="row demo-row">
+			<div class="col">
+				<h2>Fluid container</h2>
+				<p>Responsive, always maintains full-width</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col demo-col">
+				1 of 2
+			</div>
+			<div class="col demo-col">
+				2 of 2
+			</div><div class="col demo-col">
+				3 of 3
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-2 demo-col">
+				2 of 12
+			</div>
+			<div class="col-4 demo-col">
+				4 of 12
+			</div>
+			<div class="col-6 demo-col">
+				6 of 12
+			</div>
+		</div>
+
+	</div>
+
+	
+	<!-- JavaScript: first jQuery, then Popper.js, then Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
