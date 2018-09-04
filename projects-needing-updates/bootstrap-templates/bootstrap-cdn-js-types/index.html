@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+  <title>Bootstrap CDN JS Types Template</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bootstrap CDN JS Types Template</h1>
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    // strings
+    var color = "orange";
+    var temp = "very cold!";
+
+    // numbers
+    var a = 6;
+    var b = 3;
+    var c = "6"; // not really a number!
+
+    // arrays
+    var fruitArray = ["apple", "orange", "banana", "kiwi", "mango", "pear"];
+
+    // objects
+    var fruitObject = {
+      fruit: "banana",
+      color: "yellow",
+      score: 8
+    }
+
+    // collections
+    var fruitCollection = [{
+        fruit: "apple",
+        color: "red",
+        score: 7
+      },
+      {
+        fruit: "orange",
+        color: "orange",
+        score: 9
+      },
+      {
+        fruit: "banana",
+        color: "yellow",
+        score: 8
+      },
+      {
+        fruit: "kiwi",
+        color: "brown",
+        score: 5
+      },
+      {
+        fruit: "mango",
+        color: "yellow",
+        score: 6
+      },
+      {
+        fruit: "pear",
+        color: "green",
+        score: 10
+      }
+    ];
+
+
+    // for loops
+    /*
+    for (var i = 0; i < 6; i++) {
+      console.log(i);
+      // console.log(i, fruitCollection[i].fruit);
+    }
+    */
+
+    // select DOM elements with jQuery($)
+    var container = $(".container");
+
+    // select contents of elements
+    var htmlContents = $(".container").html();
+
+    // change contents of elements
+    var newhead = "This is my new headline";
+    // $(".container").html(newhead);
+
+
+    // append contents of elements
+    var newhead = "This is my new headline";
+    // $(".container").append(newhead);
+
+
+
+    // functions
+    var hello = function() {
+      console.log('Hello again, world!');
+    };
+
+    var greet = function(name) {
+      console.log('Hello again, ' + name + '!');
+    };
+
+    // hello;
+    // hello();
+    // greet();
+    // greet('Victor');
+
+
+  </script>
+
+</body>
+
+</html>

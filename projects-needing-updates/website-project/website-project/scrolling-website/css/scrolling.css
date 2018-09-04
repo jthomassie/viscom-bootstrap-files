@@ -1,0 +1,79 @@
+/* google font style */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Roboto Slab', serif;
+}
+
+
+h1 {
+  font-size: 2.4rem;
+  letter-spacing: -0.04rem;
+}
+
+header {
+	padding: 7rem 1rem 3rem;
+}
+
+section {
+	padding: 2rem 1rem 2.2rem;
+}
+
+footer {
+	padding: 2rem 1rem 4rem;
+	background-color: #777;
+}
+
+
+/* styles for small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+	h1 {
+    font-size: 3.0rem;
+    letter-spacing: -0.09rem;
+  }
+  
+  header {
+		padding: 9rem 4rem 5rem;
+	}
+
+	section {
+		padding: 7rem 4rem 8rem;
+	}
+
+	footer {
+		padding: 3rem 4rem 5rem;
+		background-color: #777;
+	}
+}
+
+/* styles for medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	h1 {
+    font-size: 3.8rem;
+    letter-spacing: -0.12rem;
+  }
+    
+  header {
+		padding: 8rem 7rem 6rem;
+	}
+
+	section {
+		padding: 6rem 7rem 8rem;
+	}
+
+	footer {
+		padding: 3rem 7rem 5rem;
+		background-color: #777;
+	}
+}
+
+.nav-pills .nav-link.active {
+	color: #fff;
+	background-color: rgba(200, 200, 200, 0.4);
+}
+
+.dk-color {
+	background-color: #bbb;
+}
+
+.lt-color {
+	background-color: #ddd;
+}
