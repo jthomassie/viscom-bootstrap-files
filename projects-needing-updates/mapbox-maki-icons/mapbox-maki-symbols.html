@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Bootstrap, Mapbox, Geojson</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<!-- Mapbox CSS -->
+	<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css" />
+	<style>
+	/* map */
+
+	#map {
+		height: 500px;
+		width: 100%;
+	}
+	.mapboxgl-popup-content {
+    position: relative;
+    max-width: 230px;
+    background: #fff;
+    border-radius: 9px;
+    padding: 10px 14px;
+	}
+	.mapboxgl-popup-content > p {
+    font-size: 0.9rem;
+    margin: 0;
+	}
+	.mapboxgl-popup-content > h6 {
+    font-size: 1.15rem;
+    margin: 0 0 0.1REM 0;
+	}
+	</style>
+</head>
+
+<body>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-lg-12'>
+				<h1>Bootstrap, Mapbox, Maki icons</h1>
+			</div>
+			<div class='col-lg-7'>
+				<div id='map'></div>
+			</div>
+			<div class='col-lg-5'>
+				<div id="myChart">
+					<h6>Percentage of 2016 votes for Republican</h6>
+					<div></div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery, Popper JS, Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<!-- Mapbox JS -->
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+	<script>
+
+		mapboxgl.accessToken = 'pk.eyJ1IjoiZm9yZGhhbSIsImEiOiJjajA0OGZ2a2MwYzZwMzNsanRvM3djZnp0In0.In1UxtrK6_2S5kkfGStmcA';
+
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			center: [-82.09999, 39.327616],
+			zoom: 16,
+			hash: true
+		});
+
+		// icon data MUST have coordinates and symbol
+		var icons = [
+			{
+				"type": "Feature",
+				"properties": {
+					"symbol": "theatre",
+					"label": "National Theater",
+					"info": "<h6>National Theater</h6><p>Lorem ipsum dolor sit amet. Ut enim ad minim veniam, quis nostrud exercitation.</p>"			
+				},
+				"geometry": {
+					"type": "Point",
+					"coordinates": [-82.0999175468736, 39.32892172058666]
+				}
+			},
+			{
+				"type": "Feature",
+				"properties": {
+					"symbol": "harbor",
+					"label": "Athens Yacht Club",
+					"info": "<h6>Athens Yacht Club</h6><p>Consectetur adipiscing elit, incididunt ut labore et dolore magna aliqua. Ut enim ad minim vitation.</p>"
+				},
+				"geometry": {
+					"type": "Point",
+					"coordinates": [-82.10247678103458, 39.32747885030429]
+				}
+			},
+			{
+				"type": "Feature",
+				"properties": {
+					"symbol": "rocket",
+					"label": "Space Station",
+					"info": "<h6>Space Station</h6><p>Lorem ipsum dolore incididunt ut ad minim veniam, quis nostrud exercitation.</p>"
+				},
+				"geometry": {
+					"type": "Point",
+					"coordinates": [-82.09907825432606, 39.32667187810617]
+				}
+			}
+		];
+
+		map.on('load', function() {
+			map.addLayer({
+				"id": "symbols",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": icons
+					}
+				},
+				"layout": {
+					"icon-image": "{symbol}-15",
+					"icon-size": 2,
+					"icon-allow-overlap": true,
+					"icon-ignore-placement": true,
+					"text-field": "{label}",
+					"text-offset": [0, 1],
+					"text-anchor": "top",
+					"text-allow-overlap": true,
+					"text-ignore-placement": true
+				}
+			});
+		});
+
+		// center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+		map.on('click', 'symbols', function(e) {
+			map.flyTo(coordinates);
+			var coordinates = e.features[0].geometry.coordinates;
+			var html = e.features[0].properties.info;
+			
+			new mapboxgl.Popup({
+							offset: 8
+			}).setLngLat(coordinates)
+        .setHTML(html)
+        .addTo(map);
+		});
+
+		// change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+		map.on('mouseenter', 'symbols', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+
+		// change it back to a pointer when it leaves.
+		map.on('mouseleave', 'symbols', function() {
+			map.getCanvas().style.cursor = '';
+		});
+	</script>
+</body>
+
+</html>
